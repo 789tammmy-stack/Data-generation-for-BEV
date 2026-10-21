@@ -34,7 +34,7 @@ The model uses the road grade to determine the gravitational component of the fo
    python data_generator.py
 5. Check the output location and confirm the generated dataset's columns, units, and target definition.
 
-> Replace `data_generator.py` with the actual filename if it differs. Exact installation commands and output filenames depend on the files included in this repository.
+> Replace `data_generation.py` with the actual filename if it differs. Exact installation commands and output filenames depend on the files included in this repository.
 
 ## Suggested repository structure
 
@@ -42,7 +42,7 @@ The model uses the road grade to determine the gravitational component of the fo
 ├── README.md
 ├── requirements.txt
 └── data/
-    └── generated_dataset.csv
+    └── data_generation.csv
 
 This is a suggested structure; adjust it to match the actual repository contents.
 
