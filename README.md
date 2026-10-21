@@ -1,7 +1,6 @@
 # Synthetic Data Generation for Battery-Electric Underground Mining Truck Energy Prediction
 ## Overview
-This project generates a synthetic dataset for studying energy consumption in battery-electric haul trucks operating in underground mining environments. A physics-based model is used to calculate net battery energy for haul segments from selected vehicle, road, and operating parameters. The synthetic dataset supports machine-learning model development and evaluation. 
-Generates 50,000 synthetic samples for battery-electric underground mining truck energy prediction using a physics-based model. Uniform sampling covers key parameters, including vehicle mass, speed, road grade, haul distance, rolling resistance, and aerodynamic properties. The dataset supports machine learning model development and evaluation.
+This project generates 50,000 synthetic samples for energy consumption in battery-electric haul trucks operating in underground mining environments. A physics-based model is used to calculate net battery energy for haul segments from selected vehicle, road, and operating parameters. The synthetic dataset supports machine-learning model development and evaluation. 
 
 ## Dataset
 - **Number of samples:** 50,000
@@ -47,14 +46,7 @@ The model uses the road grade to determine the gravitational component of the fo
 
 This is a suggested structure; adjust it to match the actual repository contents.
 
-## Intended use
-The generated data can be used for:
-- Training and evaluating machine-learning models for energy prediction
-- Comparing modelling approaches under consistent synthetic conditions
-- Investigating the effects of selected operating parameters
-- Reproducible academic experimentation
-
-The script:
+## The script:
 1. Loads the motor speed, torque, and efficiency maps.
 2. Validates and preprocesses the motor efficiency map.
 3. Builds a two-dimensional efficiency interpolator.
@@ -64,8 +56,7 @@ The script:
 7. Generates a reproducible synthetic dataset.
 8. Exports the dataset to a CSV file.
 
-Model assumptions
-----------------
+## Model assumptions
 - The vehicle travels at constant speed over each segment.
 - Rolling resistance, aerodynamic drag, and road grade are included.
 - Motor efficiency is obtained from the supplied efficiency map.
@@ -73,8 +64,7 @@ Model assumptions
 - Acceleration, auxiliary loads, battery state of charge, and regenerative
   braking limits are not explicitly modelled.
 
-Units
------
+## Units
 Mass                  : kg
 Velocity              : m/s
 Distance              : m
@@ -86,3 +76,9 @@ Power                 : W
 Energy                : kWh
 Efficiency map        : percent (0-100)
 
+## Intended use
+The generated data can be used for:
+- Training and evaluating machine-learning models for energy prediction
+- Comparing modelling approaches under consistent synthetic conditions
+- Investigating the effects of selected operating parameters
+- Reproducible academic experimentation
