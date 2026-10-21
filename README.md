@@ -54,5 +54,35 @@ The generated data can be used for:
 - Investigating the effects of selected operating parameters
 - Reproducible academic experimentation
 
-## Limitations
-Because the dataset is generated from a simplified physics-based model, it reflects the assumptions built into that model. It does not automatically capture all real underground mining conditions, including site-specific road geometry, transient acceleration, battery ageing, state-of-charge effects, regenerative-braking limits, or ventilation airflow effects unless these are explicitly implemented. The generated data should therefore not be interpreted as measured field performance.
+The script:
+1. Loads the motor speed, torque, and efficiency maps.
+2. Validates and preprocesses the motor efficiency map.
+3. Builds a two-dimensional efficiency interpolator.
+4. Calculates vehicle resistance forces.
+5. Calculates wheel and motor operating conditions.
+6. Estimates motor and battery electrical energy.
+7. Generates a reproducible synthetic dataset.
+8. Exports the dataset to a CSV file.
+
+Model assumptions
+----------------
+- The vehicle travels at constant speed over each segment.
+- Rolling resistance, aerodynamic drag, and road grade are included.
+- Motor efficiency is obtained from the supplied efficiency map.
+- Negative tractive force is treated as regenerative braking.
+- Acceleration, auxiliary loads, battery state of charge, and regenerative
+  braking limits are not explicitly modelled.
+
+Units
+-----
+Mass                  : kg
+Velocity              : m/s
+Distance              : m
+Wheel diameter        : m
+Motor torque          : N m
+Motor speed           : rad/s internally
+Slope                 : percent grade
+Power                 : W
+Energy                : kWh
+Efficiency map        : percent (0-100)
+
